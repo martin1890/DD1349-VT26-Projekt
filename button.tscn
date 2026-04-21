@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dvlo4iaqet540"]
+
+[ext_resource type="Script" uid="uid://4x6c7gswtj00" path="res://Rooms/RoomComponents/button.gd" id="1_rq7r5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bcws6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rq7r5"]
+
+[node name="Button" type="StaticBody3D" unique_id=1624754901]
+collision_layer = 2
+script = ExtResource("1_rq7r5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1822997957]
+mesh = SubResource("BoxMesh_bcws6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=359723440]
+shape = SubResource("BoxShape3D_rq7r5")
