@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bmw5fq6kvn804"]
+
+[ext_resource type="PackedScene" uid="uid://dqtg47py5hfsa" path="res://pillar_base.tscn" id="1_qe44k"]
+[ext_resource type="PackedScene" uid="uid://biuvnxw6gthd3" path="res://rotating_bridge.tscn" id="2_h8fe6"]
+
+[node name="pillar_base" instance=ExtResource("1_qe44k")]
+
+[node name="rotating_bridge" parent="." index="2" instance=ExtResource("2_h8fe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_angle_deg = null
+rotation_speed = null
+stop_threshold_deg = null
