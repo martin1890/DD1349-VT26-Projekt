@@ -13,3 +13,4 @@ climbable walls
 rotating bridges
 preasure plates/levers/buttons
 
+We expect this project to be constrained to Godot, as it is intended as a development tool rather than a consumer product. By this we mean that you will need to install Godot to implement the dungeon room generator into a project.
