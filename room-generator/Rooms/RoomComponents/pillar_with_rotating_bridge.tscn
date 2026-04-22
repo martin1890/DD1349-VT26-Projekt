@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmw5fq6kvn804"]
 
-[ext_resource type="PackedScene" uid="uid://dqtg47py5hfsa" path="res://pillar_base.tscn" id="1_qe44k"]
-[ext_resource type="PackedScene" uid="uid://biuvnxw6gthd3" path="res://rotating_bridge.tscn" id="2_h8fe6"]
+[ext_resource type="PackedScene" uid="uid://dqtg47py5hfsa" path="res://Rooms/RoomComponents/pillar_base.tscn" id="1_qe44k"]
+[ext_resource type="PackedScene" uid="uid://biuvnxw6gthd3" path="res://Rooms/RoomComponents/rotating_bridge.tscn" id="2_h8fe6"]
 
 [node name="pillar_base" instance=ExtResource("1_qe44k")]
 

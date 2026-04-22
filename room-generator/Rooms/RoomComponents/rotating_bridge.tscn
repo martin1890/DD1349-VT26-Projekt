@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://biuvnxw6gthd3"]
 
-[ext_resource type="Script" uid="uid://bbetlob7x7ln0" path="res://rotating_bridge.gd" id="1_if711"]
+[ext_resource type="Script" uid="uid://bbetlob7x7ln0" path="res://Rooms/RoomComponents/rotating_bridge.gd" id="1_if711"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mwkpp"]
 
