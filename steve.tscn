@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bpf4n1xy86spf"]
+
+[ext_resource type="Script" uid="uid://bs22hq5ulg45m" path="res://Rooms/RoomComponents/steve.gd" id="1_vs3u7"]
+[ext_resource type="Script" uid="uid://blrqdogyy8xya" path="res://camera_3d.gd" id="2_dfshx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kmqv8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8c8hf"]
+
+[node name="Steve" type="CharacterBody3D" unique_id=408165731]
+script = ExtResource("1_vs3u7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1755440512]
+mesh = SubResource("CapsuleMesh_kmqv8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2023938830]
+shape = SubResource("CapsuleShape3D_8c8hf")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1809791554]
+transform = Transform3D(1, 0, 0, 0, 0.99917185, -0.040689856, 0, 0.040689856, 0.99917185, 0, 1.2762799, 0.061635613)
+script = ExtResource("2_dfshx")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=145607318]
+target_position = Vector3(0, 0, -3)
+collision_mask = 2
