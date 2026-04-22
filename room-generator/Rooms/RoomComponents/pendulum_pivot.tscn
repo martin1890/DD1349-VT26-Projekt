@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2254mv47pfbo"]
+
+[ext_resource type="Script" uid="uid://cs5sp01315kqs" path="res://pendulum_pivot.gd" id="1_dqrkj"]
+[ext_resource type="PackedScene" uid="uid://bnkkdx0w3dkuq" path="res://Rooms/RoomComponents/pendulum_scythe.tscn" id="2_gep6w"]
+
+[node name="pendulum_pivot" type="Node3D" unique_id=1370588055]
+script = ExtResource("1_dqrkj")
+
+[node name="Pendulum_Scythe" parent="." unique_id=21411335 instance=ExtResource("2_gep6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cte7e7xds8fqg"]
+
+[sub_resource type="Curve3D" id="Curve3D_su4qr"]
+
+[node name="floor" type="StaticBody3D" unique_id=917113518]
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1419051861]
+curve = SubResource("Curve3D_su4qr")

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b2pnwksup5ry1"]
 
-[ext_resource type="PackedScene" path="res://Rooms/RoomComponents/steve.tscn" id="1_88gup"]
-[ext_resource type="Script" path="res://Rooms/RoomComponents/steve.gd" id="2_bisa2"]
-[ext_resource type="Script" uid="uid://blrqdogyy8xya" path="res://camera_3d.gd" id="3_4o3f6"]
+[ext_resource type="PackedScene" uid="uid://bpf4n1xy86spf" path="res://Rooms/RoomComponents/steve.tscn" id="1_88gup"]
+[ext_resource type="PackedScene" path="res://Rooms/RoomComponents/pillar_with_rotating_bridge.tscn" id="2_bisa2"]
+[ext_resource type="PackedScene" uid="uid://8clc6sphlcs1" path="res://Rooms/RoomComponents/button.tscn" id="3_4o3f6"]
+[ext_resource type="PackedScene" uid="uid://cte7e7xds8fqg" path="res://Rooms/RoomComponents/floor.tscn" id="4_v5vuv"]
+[ext_resource type="PackedScene" uid="uid://d2254mv47pfbo" path="res://Rooms/RoomComponents/pendulum_pivot.tscn" id="5_ka7wq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bisa2"]
 size = Vector3(10, 1, 10)
@@ -11,13 +13,6 @@ size = Vector3(10, 1, 10)
 size = Vector3(10, 1, 10)
 
 [node name="Node3D" type="Node3D" unique_id=1869561359]
-
-[node name="Steve" parent="." unique_id=253008683 instance=ExtResource("1_88gup")]
-script = ExtResource("2_bisa2")
-
-[node name="Camera3D" type="Camera3D" parent="Steve" unique_id=223269612]
-transform = Transform3D(1, 0, 0, 0, 0.99917185, -0.04068983, 0, 0.04068983, 0.99917185, 0, 0.8968754, 0.061635613)
-script = ExtResource("3_4o3f6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1081048851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1643032, 0)
@@ -30,3 +25,17 @@ mesh = SubResource("BoxMesh_4o3f6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1119135086]
 transform = Transform3D(1, 0, 0, 0, 0.8940526, 0.44796196, 0, -0.44796196, 0.8940526, 0, 2.0283449, 0)
+
+[node name="Steve" parent="." unique_id=408165731 instance=ExtResource("1_88gup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29921246, 0)
+
+[node name="pillar_base" parent="." unique_id=2119797141 instance=ExtResource("2_bisa2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.685283, -2.6459875, 0)
+
+[node name="Button" parent="." unique_id=1624754901 instance=ExtResource("3_4o3f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7774372, 0, 3.0859256)
+
+[node name="floor" parent="." unique_id=917113518 instance=ExtResource("4_v5vuv")]
+
+[node name="pendulum_pivot" parent="." unique_id=1370588055 instance=ExtResource("5_ka7wq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9344363, 2.8502629, 0)
