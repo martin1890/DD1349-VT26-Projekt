@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 var is_climbing = false
 
 @onready var climb_ray = $ClimbableWallDetector # Adjust path if needed
+@onready var ray = $Camera3D/RayCast3D
 
 func _physics_process(delta: float) -> void:
 	if is_climbing:
@@ -69,8 +70,10 @@ func _input(event):
 
 	# Existing interaction logic for "E"
 	if event.is_action_pressed("interact"):
-		if climb_ray.is_colliding():
-			var collider = climb_ray.get_collider()
+		print("Pressed E")
+		if ray.is_colliding():
+			print("Colliding")
+			var collider = ray.get_collider()
 			if collider.has_method("interact"):
 				collider.interact()
 
