@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://br6f8taa1kg73"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pxud"]
+
+[node name="Trapdoor" type="StaticBody3D" unique_id=170739454]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1458222664]
+shape = SubResource("BoxShape3D_0pxud")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=592740268]
