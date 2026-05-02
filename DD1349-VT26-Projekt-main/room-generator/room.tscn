@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bpf4n1xy86spf" path="res://Rooms/RoomComponents/steve.tscn" id="1_88gup"]
 [ext_resource type="Script" uid="uid://blrqdogyy8xya" path="res://camera_3d.gd" id="3_4o3f6"]
-[ext_resource type="PackedScene" uid="uid://u06rejolblad" path="res://Rooms/RoomComponents/climb_wall.tscn" id="3_v5vuv"]
+[ext_resource type="PackedScene" uid="uid://br6f8taa1kg73" path="res://Rooms/RoomComponents/trapdoor.tscn" id="3_v5vuv"]
+[ext_resource type="PackedScene" uid="uid://8clc6sphlcs1" path="res://Rooms/RoomComponents/button.tscn" id="4_v5vuv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bisa2"]
 size = Vector3(10, 1, 10)
@@ -13,7 +14,7 @@ size = Vector3(10, 1, 10)
 [node name="Node3D" type="Node3D" unique_id=1869561359]
 
 [node name="Steve" parent="." unique_id=253008683 instance=ExtResource("1_88gup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.393566)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1433656)
 
 [node name="Camera3D2" type="Camera3D" parent="Steve" unique_id=223269612]
 transform = Transform3D(1, 0, 0, 0, 0.99917185, -0.04068983, 0, 0.04068983, 0.99917185, 0, 0.8968754, 0.061635613)
@@ -31,5 +32,13 @@ mesh = SubResource("BoxMesh_4o3f6")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1119135086]
 transform = Transform3D(1, 0, 0, 0, 0.8940526, 0.44796196, 0, -0.44796196, 0.8940526, 0, 2.0283449, 0)
 
-[node name="Climb_wall" parent="." unique_id=88695029 instance=ExtResource("3_v5vuv")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.9389167, -3.175179)
+[node name="trapdoor_hinge_step_on" parent="." unique_id=1994545824 instance=ExtResource("3_v5vuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7564249, -5.051187)
+is_step_activated = true
+
+[node name="trapdoor_hinge_button" parent="." unique_id=1042637895 node_paths=PackedStringArray("button") instance=ExtResource("3_v5vuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77113, 1.0515753, 0)
+button = NodePath("../Button")
+
+[node name="Button" parent="." unique_id=1624754901 instance=ExtResource("4_v5vuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.059358, 0.88859653, 0)

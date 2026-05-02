@@ -1,10 +1,34 @@
 [gd_scene format=3 uid="uid://br6f8taa1kg73"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0pxud"]
+[ext_resource type="Script" uid="uid://dgtnp551wagll" path="res://trapdoor.gd" id="1_54k18"]
 
-[node name="Trapdoor" type="StaticBody3D" unique_id=170739454]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pxud"]
+albedo_color = Color(0.4075298, 0.25571272, 0.10338714, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1458222664]
-shape = SubResource("BoxShape3D_0pxud")
+[sub_resource type="BoxMesh" id="BoxMesh_6lfqu"]
+material = SubResource("StandardMaterial3D_0pxud")
+size = Vector3(1, 0.1, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=592740268]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rcclu"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qn7dm"]
+size = Vector3(1, 0.15, 1)
+
+[node name="trapdoor_hinge" type="Node3D" unique_id=1994545824 node_paths=PackedStringArray("step_area")]
+script = ExtResource("1_54k18")
+step_area = NodePath("trapdoor/Area3D")
+
+[node name="trapdoor" type="StaticBody3D" parent="." unique_id=1075304047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="trapdoor" unique_id=1186434872]
+mesh = SubResource("BoxMesh_6lfqu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trapdoor" unique_id=758493779]
+shape = SubResource("BoxShape3D_rcclu")
+
+[node name="Area3D" type="Area3D" parent="trapdoor" unique_id=1629449342]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trapdoor/Area3D" unique_id=230691796]
+shape = SubResource("BoxShape3D_qn7dm")
