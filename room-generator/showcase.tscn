@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cat08uwtpmpwc"]
+
+[ext_resource type="Script" uid="uid://cmnjm86xv5v8n" path="res://showcase.gd" id="1_lou5n"]
+[ext_resource type="Script" uid="uid://ex608u7ymxbk" path="res://camera_3d.gd" id="2_a77a3"]
+
+[node name="showcase" type="Node3D" unique_id=1989258825]
+script = ExtResource("1_lou5n")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1355258421]
+script = ExtResource("2_a77a3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=759459929]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1533633553]
+transform = Transform3D(1, 0, 0, 0, 0.2343447, 0.97215354, 0, -0.97215354, 0.2343447, 0, 11.16065, 0)
