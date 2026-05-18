@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bivkx3qbrhi25"]
+
+[ext_resource type="Script" uid="uid://dg7uwb2bgu6ql" path="res://Rooms/RoomComponents/lever.gd" id="1_5bkv4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eusp2"]
+size = Vector3(1, 0.1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xlup1"]
+size = Vector3(1, 0.1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5bkv4"]
+size = Vector3(0.1, 0.1, 0.5)
+
+[node name="Lever" type="StaticBody3D" unique_id=1799291464]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_5bkv4")
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1071926021]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -0.99999994, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.3711385e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_eusp2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1688551546]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_xlup1")
+
+[node name="HandlePivot" type="Node3D" parent="." unique_id=2085562637]
+transform = Transform3D(-1, 8.742277e-08, 0, -8.742278e-08, -0.99999994, 0, 0, 0, 0.99999994, 0, -0.039339572, 0.034259915)
+
+[node name="StickMesh" type="MeshInstance3D" parent="HandlePivot" unique_id=1733920009]
+transform = Transform3D(1, 0, 0, 0, -0.7071067, -0.7071067, 0, 0.7071067, -0.7071067, 0, -0.049078524, -2.1452904e-09)
+mesh = SubResource("BoxMesh_5bkv4")

@@ -12,7 +12,7 @@ func _ready():
 	button.pressed.connect(_change_direction)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("rotate_bridge"):
+	if Input.is_action_just_pressed("interact"):
 		should_change = true
 
 	if should_change:
