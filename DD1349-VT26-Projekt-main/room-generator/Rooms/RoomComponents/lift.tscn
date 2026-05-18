@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ch3htm2r0pvv4"]
+
+[ext_resource type="Script" uid="uid://b2xqf4fk86cxj" path="res://lift.gd" id="1_rg1wd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rg1wd"]
+albedo_color = Color(0.15933204, 0.0074253236, 0.4368394, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_msi17"]
+material = SubResource("StandardMaterial3D_rg1wd")
+size = Vector3(5, 0.3, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elcv5"]
+size = Vector3(5, 0.3, 5)
+
+[node name="Lift" type="AnimatableBody3D" unique_id=83085735]
+script = ExtResource("1_rg1wd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=407597455]
+mesh = SubResource("BoxMesh_msi17")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2138124193]
+shape = SubResource("BoxShape3D_elcv5")

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c8kntgkqwcvm7"]
+
+[ext_resource type="Script" uid="uid://bs6ua4br4chww" path="res://Rooms/RoomComponents/pressure_plate.gd" id="1_b5q1e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nxbai"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5q1e"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0x00k"]
+size = Vector3(1, 0.1, 1)
+
+[node name="pressure_plate" type="Node3D" unique_id=1451941856]
+script = ExtResource("1_b5q1e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=559573209]
+mesh = SubResource("BoxMesh_nxbai")
+
+[node name="plate_area" type="Area3D" parent="." unique_id=854412717]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="plate_area" unique_id=37475590]
+mesh = SubResource("BoxMesh_b5q1e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plate_area" unique_id=1329263350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+shape = SubResource("BoxShape3D_0x00k")

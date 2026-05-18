@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://blrqdogyy8xya" path="res://camera_3d.gd" id="3_4o3f6"]
 [ext_resource type="PackedScene" uid="uid://br6f8taa1kg73" path="res://Rooms/RoomComponents/trapdoor.tscn" id="3_v5vuv"]
 [ext_resource type="PackedScene" uid="uid://8clc6sphlcs1" path="res://Rooms/RoomComponents/button.tscn" id="4_v5vuv"]
+[ext_resource type="PackedScene" uid="uid://u06rejolblad" path="res://Rooms/RoomComponents/climb_wall.tscn" id="5_ka7wq"]
+[ext_resource type="PackedScene" uid="uid://c8kntgkqwcvm7" path="res://Rooms/RoomComponents/pressure_plate.tscn" id="6_x5k2b"]
+[ext_resource type="PackedScene" uid="uid://ch3htm2r0pvv4" path="res://Rooms/RoomComponents/lift.tscn" id="8_42v8c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bisa2"]
 size = Vector3(10, 1, 10)
@@ -34,11 +37,26 @@ transform = Transform3D(1, 0, 0, 0, 0.8940526, 0.44796196, 0, -0.44796196, 0.894
 
 [node name="trapdoor_hinge_step_on" parent="." unique_id=1994545824 instance=ExtResource("3_v5vuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7564249, -5.051187)
+visible = false
 is_step_activated = true
 
 [node name="trapdoor_hinge_button" parent="." unique_id=1042637895 node_paths=PackedStringArray("button") instance=ExtResource("3_v5vuv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77113, 1.0515753, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77113, 16.795485, 0)
+visible = false
 button = NodePath("../Button")
 
 [node name="Button" parent="." unique_id=1624754901 instance=ExtResource("4_v5vuv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.059358, 0.88859653, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.059358, 11.911932, 0)
+visible = false
+
+[node name="Climb_wall" parent="." unique_id=88695029 instance=ExtResource("5_ka7wq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0662174, 0, 0)
+visible = false
+
+[node name="Lift" parent="." unique_id=83085735 instance=ExtResource("8_42v8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.029341, -1.9950051, 0)
+
+[node name="pressure_plate" parent="Lift" unique_id=1451941856 instance=ExtResource("6_x5k2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0004892349, 0.20184147, 0)
+
+[connection signal="plate_activated" from="Lift/pressure_plate" to="Lift" method="_on_pressure_plate_activated"]
