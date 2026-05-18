@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cebasscs4lhyx"]
+
+[ext_resource type="Script" uid="uid://dprnakuwrt234" path="res://Rooms/RoomComponents/arrow.gd" id="1_05l2v"]
+
+[sub_resource type="Gradient" id="Gradient_05l2v"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p4g8l"]
+gradient = SubResource("Gradient_05l2v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwjy1"]
+albedo_texture = SubResource("GradientTexture2D_p4g8l")
+
+[sub_resource type="PrismMesh" id="PrismMesh_p4g8l"]
+material = SubResource("StandardMaterial3D_kwjy1")
+size = Vector3(0.04, 0.12, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts5vo"]
+albedo_color = Color(0.30258563, 0.2183336, 0.038305316, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ts5vo"]
+material = SubResource("StandardMaterial3D_ts5vo")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_05l2v"]
+height = 0.4
+radius = 0.01
+
+[node name="Arrow" type="Area3D" unique_id=1214596210]
+script = ExtResource("1_05l2v")
+
+[node name="Arrow_tip" type="MeshInstance3D" parent="." unique_id=997690298]
+transform = Transform3D(1.9106853e-15, 4.3711385e-08, 1, 0.9999999, -4.3711385e-08, 0, 4.3711385e-08, 0.9999999, -4.371139e-08, 0, 0, 0.22086225)
+mesh = SubResource("PrismMesh_p4g8l")
+
+[node name="Arrow_body" type="MeshInstance3D" parent="." unique_id=1310275000]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ts5vo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1776324155]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_05l2v")
