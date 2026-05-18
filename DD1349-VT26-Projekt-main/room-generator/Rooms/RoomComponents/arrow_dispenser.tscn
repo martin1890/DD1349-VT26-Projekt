@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cl8nqbkqjcvvo"]
+
+[ext_resource type="Script" uid="uid://k5x8yxwysjlx" path="res://Rooms/RoomComponents/arrow_dispenser.gd" id="1_y4hgs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhj33"]
+albedo_color = Color(0.35406274, 0.3540629, 0.35406286, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y4hgs"]
+material = SubResource("StandardMaterial3D_mhj33")
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roq08"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ajhax"]
+material = SubResource("StandardMaterial3D_roq08")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.5
+
+[node name="Arrow_dispenser" type="Node3D" unique_id=1357494638]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_y4hgs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=76100037]
+mesh = SubResource("BoxMesh_y4hgs")
+
+[node name="Arrow_holes" type="Node3D" parent="." unique_id=1433701719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9120536, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arrow_holes" unique_id=1452132314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.91, 0)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Arrow_holes" unique_id=1314479827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.91, 0.3)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Arrow_holes" unique_id=334368527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.91, -0.3)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Arrow_holes" unique_id=498074650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.91, 0.3)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Arrow_holes" unique_id=586405675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.91, -0.3)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Arrow_holes" unique_id=845250266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.91, -0.3)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Arrow_holes" unique_id=832272861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.91, 0)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Arrow_holes" unique_id=2144064446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.91, 0)
+mesh = SubResource("CylinderMesh_ajhax")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Arrow_holes" unique_id=1187957357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.91, 0.3)
+mesh = SubResource("CylinderMesh_ajhax")

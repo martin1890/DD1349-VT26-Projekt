@@ -7,8 +7,10 @@ albedo_color = Color(0.6407007, 0.00030563027, 0.64079994, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bcws6"]
 material = SubResource("StandardMaterial3D_rq7r5")
+size = Vector3(0.1, 0.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rq7r5"]
+size = Vector3(0.1, 0.5, 1)
 
 [node name="Button" type="StaticBody3D" unique_id=1624754901]
 collision_layer = 3

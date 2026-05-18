@@ -19,7 +19,7 @@ func _on_entered(body):
 	var is_player = body.is_in_group("player") or (body.owner and body.owner.is_in_group("player"))
 	
 	if is_player:
-		print("PLAYER DETECTED - Sinking Plate")
+		print("PLAYER DETECTED")
 		animate_plate(original_y - sink_distance)
 		plate_activated.emit(true)
 	else:
@@ -31,7 +31,7 @@ func _on_exited(body):
 	var is_player = body.is_in_group("player") or (body.owner and body.owner.is_in_group("player"))
 	
 	if is_player:
-		print("PLAYER LEFT - Raising Plate")
+		print("PLAYER LEFT")
 		animate_plate(original_y)
 		plate_activated.emit(false)
 # THE CUSTOM FUNCTION
