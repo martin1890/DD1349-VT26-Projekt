@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bhlmw7w5jcqdb"]
+
+[ext_resource type="Script" uid="uid://bqs5dte45vdwu" path="res://Rooms/RoomComponents/boulder.gd" id="1_rm7cw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s7uos"]
+friction = 0.2
+
+[sub_resource type="Gradient" id="Gradient_rm7cw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4mg0j"]
+gradient = SubResource("Gradient_rm7cw")
+fill_from = Vector2(0.43806645, 0.7824773)
+fill_to = Vector2(0.41993958, 0.8549849)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wwe5"]
+albedo_color = Color(0.7976585, 0.79765844, 0.7976585, 1)
+albedo_texture = SubResource("GradientTexture2D_4mg0j")
+
+[sub_resource type="SphereMesh" id="SphereMesh_b7p26"]
+material = SubResource("StandardMaterial3D_0wwe5")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pe761"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rm7cw"]
+radius = 0.52
+
+[node name="Boulder" type="RigidBody3D" unique_id=2051793869]
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_s7uos")
+script = ExtResource("1_rm7cw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1630446321]
+mesh = SubResource("SphereMesh_b7p26")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=7395321]
+shape = SubResource("SphereShape3D_pe761")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1059993125]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1425374117]
+shape = SubResource("SphereShape3D_rm7cw")
