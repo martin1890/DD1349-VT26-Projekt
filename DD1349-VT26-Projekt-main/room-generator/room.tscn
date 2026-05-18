@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b2pnwksup5ry1"]
 
 [ext_resource type="PackedScene" uid="uid://bpf4n1xy86spf" path="res://Rooms/RoomComponents/steve.tscn" id="1_88gup"]
-[ext_resource type="Script" uid="uid://cm71dvoixs32e" path="res://room.gd" id="1_mb7s7"]
 [ext_resource type="Script" uid="uid://blrqdogyy8xya" path="res://camera_3d.gd" id="3_4o3f6"]
 [ext_resource type="PackedScene" uid="uid://br6f8taa1kg73" path="res://Rooms/RoomComponents/trapdoor.tscn" id="3_v5vuv"]
 [ext_resource type="PackedScene" uid="uid://8clc6sphlcs1" path="res://Rooms/RoomComponents/button.tscn" id="4_v5vuv"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cebasscs4lhyx" path="res://Rooms/RoomComponents/arrow.tscn" id="8_mb7s7"]
 [ext_resource type="PackedScene" uid="uid://cl8nqbkqjcvvo" path="res://Rooms/RoomComponents/arrow_dispenser.tscn" id="9_xorjj"]
 [ext_resource type="PackedScene" uid="uid://bmw5fq6kvn804" path="res://Rooms/RoomComponents/pillar_with_rotating_bridge.tscn" id="11_xorjj"]
+[ext_resource type="PackedScene" uid="uid://bivkx3qbrhi25" path="res://Rooms/RoomComponents/lever.tscn" id="12_xwbdb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bisa2"]
 size = Vector3(10, 1, 10)
@@ -19,7 +19,6 @@ size = Vector3(10, 1, 10)
 size = Vector3(10, 1, 10)
 
 [node name="Node3D" type="Node3D" unique_id=1869561359]
-script = ExtResource("1_mb7s7")
 
 [node name="Steve" parent="." unique_id=253008683 instance=ExtResource("1_88gup")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1433656)
@@ -42,32 +41,41 @@ transform = Transform3D(1, 0, 0, 0, 0.8940526, 0.44796196, 0, -0.44796196, 0.894
 
 [node name="trapdoor_hinge_step_on" parent="." unique_id=1994545824 instance=ExtResource("3_v5vuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7564249, -5.051187)
+visible = false
 is_step_activated = true
 
 [node name="trapdoor_hinge_button" parent="." unique_id=1042637895 node_paths=PackedStringArray("button") instance=ExtResource("3_v5vuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77113, 16.795485, 0)
+visible = false
 button = NodePath("../Button")
 
 [node name="Button" parent="." unique_id=1624754901 instance=ExtResource("4_v5vuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.059358, 11.911932, 0)
+visible = false
 
 [node name="Climb_wall" parent="." unique_id=88695029 instance=ExtResource("5_ka7wq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1494207, 0, 12.242304)
+visible = false
 
 [node name="Lift" parent="." unique_id=83085735 instance=ExtResource("8_42v8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.029341, -1.9950051, 0)
+visible = false
 
 [node name="pressure_plate" parent="Lift" unique_id=1451941856 instance=ExtResource("6_x5k2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0004892349, 0.20184147, 0)
+visible = false
 
 [node name="Arrow_dispenser" parent="." unique_id=1357494638 instance=ExtResource("9_xorjj")]
 transform = Transform3D(-0.99996954, 0.0078014852, 3.4101375e-10, 0, -4.371139e-08, 1, 0.0078014852, 0.99996954, 4.3710056e-08, -3.5798135, 0.65257597, 0)
+visible = false
 
 [node name="pressure_plate_arrows" parent="Arrow_dispenser" unique_id=1639363926 instance=ExtResource("6_x5k2b")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -8.916307e-08, 2.0398126, -1.1350836)
+visible = false
 
 [node name="Arrows" type="Node3D" parent="Arrow_dispenser" unique_id=657415285]
 transform = Transform3D(-4.371139e-08, 0, 1, 1, -4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 1.9106855e-15, -2.7019925, 3.5798135, -5.223728)
+visible = false
 
 [node name="Arrow" parent="Arrow_dispenser/Arrows" unique_id=395305847 instance=ExtResource("8_mb7s7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.6124327, 5.5307612, 2.39334)
@@ -98,8 +106,13 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.6
 
 [node name="Arrow" parent="." unique_id=1214596210 instance=ExtResource("8_mb7s7")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3291774, 0.80952036, 0.5373604)
+visible = false
 
 [node name="pillar_base" parent="." unique_id=1871255208 instance=ExtResource("11_xorjj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.846283, 0, 0)
+visible = false
+
+[node name="Lever" parent="." unique_id=2055375091 instance=ExtResource("12_xwbdb")]
+transform = Transform3D(0.9926519, 0.113339625, -0.04238253, 0.10684687, -0.9853878, -0.13264203, -0.056796826, 0.12713891, -0.990257, 0, 0.52699673, 1.9988562)
 
 [connection signal="plate_activated" from="Lift/pressure_plate" to="Lift" method="_on_pressure_plate_activated"]

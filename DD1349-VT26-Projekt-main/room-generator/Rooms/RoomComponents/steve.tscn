@@ -19,7 +19,7 @@ mesh = SubResource("CapsuleMesh_kmqv8")
 shape = SubResource("CapsuleShape3D_8c8hf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1809791554]
-transform = Transform3D(1, 0, 0, 0, 0.99917185, -0.040689856, 0, 0.040689856, 0.99917185, 0, 1.2762799, 0.061635613)
+transform = Transform3D(1, 0, 0, 0, 0.99917185, -0.040689856, 0, 0.040689856, 0.99917185, 0, 0.88937473, 0.061635613)
 script = ExtResource("2_dfshx")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=145607318]
