@@ -10,18 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://cebasscs4lhyx" path="res://Rooms/RoomComponents/arrow.tscn" id="8_mb7s7"]
 [ext_resource type="PackedScene" uid="uid://cl8nqbkqjcvvo" path="res://Rooms/RoomComponents/arrow_dispenser.tscn" id="9_xorjj"]
 [ext_resource type="PackedScene" uid="uid://bmw5fq6kvn804" path="res://Rooms/RoomComponents/pillar_with_rotating_bridge.tscn" id="11_xorjj"]
+[ext_resource type="PackedScene" uid="uid://87j64h3gxo1a" path="res://Rooms/RoomComponents/ramp.tscn" id="12_voycu"]
 [ext_resource type="PackedScene" uid="uid://bivkx3qbrhi25" path="res://Rooms/RoomComponents/lever.tscn" id="12_xwbdb"]
+[ext_resource type="PackedScene" uid="uid://bhlmw7w5jcqdb" path="res://Rooms/RoomComponents/boulder.tscn" id="13_6tcb1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bisa2"]
-size = Vector3(10, 1, 10)
+size = Vector3(20, 1, 20)
 
-[sub_resource type="BoxMesh" id="BoxMesh_4o3f6"]
-size = Vector3(10, 1, 10)
+[sub_resource type="BoxMesh" id="BoxMesh_xorjj"]
+size = Vector3(20, 1, 20)
 
 [node name="Node3D" type="Node3D" unique_id=1869561359]
 
 [node name="Steve" parent="." unique_id=253008683 instance=ExtResource("1_88gup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1433656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.1541796)
 
 [node name="Camera3D2" type="Camera3D" parent="Steve" unique_id=223269612]
 transform = Transform3D(1, 0, 0, 0, 0.99917185, -0.04068983, 0, 0.04068983, 0.99917185, 0, 0.8968754, 0.061635613)
@@ -34,7 +36,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1643032, 0)
 shape = SubResource("BoxShape3D_bisa2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2053895393]
-mesh = SubResource("BoxMesh_4o3f6")
+mesh = SubResource("BoxMesh_xorjj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1119135086]
 transform = Transform3D(1, 0, 0, 0, 0.8940526, 0.44796196, 0, -0.44796196, 0.8940526, 0, 2.0283449, 0)
@@ -114,5 +116,11 @@ visible = false
 
 [node name="Lever" parent="." unique_id=2055375091 instance=ExtResource("12_xwbdb")]
 transform = Transform3D(0.9926519, 0.113339625, -0.04238253, 0.10684687, -0.9853878, -0.13264203, -0.056796826, 0.12713891, -0.990257, 0, 0.52699673, 1.9988562)
+
+[node name="Ramp" parent="." unique_id=1233361382 instance=ExtResource("12_voycu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0240865, 0.92100286, -4.334664)
+
+[node name="Boulder" parent="." unique_id=2051793869 instance=ExtResource("13_6tcb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.721316, 3.149076, -4.961727)
 
 [connection signal="plate_activated" from="Lift/pressure_plate" to="Lift" method="_on_pressure_plate_activated"]
