@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://u06rejolblad"]
 
-[ext_resource type="Script" uid="uid://c4rf7jlui5cvd" path="res://Rooms/RoomComponents/climb_wall.gd" id="1_wuj3o"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6tlb"]
+size = Vector3(3, 5, 0.5)
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_p6tlb"]
 albedo_color = Color(0, 0.54901963, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wuj3o"]
+size = Vector3(3, 5, 0.5)
 
 [node name="Climb_wall" type="StaticBody3D" unique_id=88695029 groups=["climbable"]]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_wuj3o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2132132601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03289807)

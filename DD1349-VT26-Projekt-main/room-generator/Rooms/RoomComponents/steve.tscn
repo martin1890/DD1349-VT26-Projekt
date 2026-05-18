@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8c8hf"]
 
-[node name="Steve" type="CharacterBody3D" unique_id=408165731]
+[node name="Steve" type="CharacterBody3D" unique_id=408165731 groups=["player"]]
 collision_mask = 5
 safe_margin = 0.005
 script = ExtResource("1_vs3u7")

@@ -88,3 +88,7 @@ func exit_climb():
 	is_climbing = false
 	# Optional: Give a tiny push away from the wall so you don't 
 	# immediately re-trigger the raycast if you're spamming G
+
+
+func _on_pressure_plate_plate_activated(is_active: bool) -> void:
+	pass # Replace with function body.
